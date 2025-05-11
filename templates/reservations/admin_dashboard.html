@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Admin Dashboard</h2>
+<div class="list-group">
+    <a href="{% url 'admin_manage_rooms' %}" class="list-group-item list-group-item-action">Manage Rooms</a>
+    <a href="{% url 'admin_manage_reservations' %}" class="list-group-item list-group-item-action">View All Reservations</a>
+    <a href="{% url 'admin_manage_users' %}" class="list-group-item list-group-item-action">Manage Users</a>
+</div>
+{% endblock %}
+
+</body>
+</html>

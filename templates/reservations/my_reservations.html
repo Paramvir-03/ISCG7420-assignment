@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+<h2>My Reservations</h2>
+<ul class="list-group">
+  {% for r in reservations %}
+    <li class="list-group-item">
+      <strong>{{ r.room.name }}</strong> - {{ r.date }} {{ r.start_time }}–{{ r.end_time }}
+      <a href="{% url 'edit_reservation' r.id %}" class="btn btn-sm btn-outline-secondary">Edit</a>
+      <a href="{% url 'delete_reservation' r.id %}" class="btn btn-sm btn-outline-danger">Cancel</a>
+    </li>
+  {% empty %}
+    <li class="list-group-item">No reservations found.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
+
+</body>
+</html>

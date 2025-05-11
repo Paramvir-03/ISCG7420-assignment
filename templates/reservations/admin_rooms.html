@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "base.html" %}
+{% block content %}
+<h2>Manage Conference Rooms</h2>
+<a href="{% url 'admin_add_room' %}" class="btn btn-success mb-3">Add New Room</a>
+<table class="table table-striped">
+    <tr>
+        <th>Name</th><th>Location</th><th>Capacity</th><th>Actions</th>
+    </tr>
+    {% for room in rooms %}
+    <tr>
+        <td>{{ room.name }}</td>
+        <td>{{ room.location }}</td>
+        <td>{{ room.capacity }}</td>
+        <td>
+            <a href="{% url 'admin_edit_room' room.id %}" class="btn btn-sm btn-warning">Edit</a>
+            <a href="{% url 'admin_delete_room' room.id %}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+</body>
+</html>
