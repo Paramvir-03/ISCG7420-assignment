@@ -33,6 +33,6 @@ This project is a web-based room booking application for **Te Whare Rūnanga Ltd
 ## 🚀 Deployment
 
 This app is hosted on Vercel.  
-🔗 Live Link: [https://your-vercel-link.vercel.app](https://your-vercel-link.vercel.app)
+🔗 Live Link: https://vercel.com/paramvir-singhs-projects-9f8fb91a/iscg-7420-assignment
 
 ---
